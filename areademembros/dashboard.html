@@ -17,22 +17,22 @@
         ==================================================================
         */
         :root {
-            --primary: #1b3a24;            /* Verde Escuro principal */
-            --primary-light: #2d5a3c;      /* Verde Médio */
-            --primary-mid: #3a7a4a;        /* Verde Intermediário */
-            --support: #4caf50;            /* Verde Suporte */
-            --support-dark: #388e3c;       /* Verde Escuro Suporte */
-            --support-light: #e8f5e9;      /* Verde Claro */
-            --bg-beige: #e4f2e4;           /* Bege Suave */
-            --bg-beige-dark: #d0e9d0;      /* Fundo da imagem do card */
-            --text-dark: #1e2e20;          /* Texto principal */
-            --text-muted: #5c6f5f;         /* Texto secundário */
-            --border-color: #b8e2b9;       /* Cor das bordas */
+            --primary: #4a2711;            /* Marrom Escuro Quente */
+            --primary-light: #7c3f1b;      /* Marrom Médio */
+            --primary-mid: #9c582f;        /* Marrom Intermediário */
+            --support: #e67e22;            /* Laranja */
+            --support-dark: #d35400;       /* Laranja Escuro */
+            --support-light: #fdf2e9;      /* Laranja/Creme Bem Claro */
+            --bg-beige: #f5ebd9;           /* Bege Suave */
+            --bg-beige-dark: #e8dcc4;      /* Fundo da imagem do card (Bege Escuro) */
+            --text-dark: #2b1a0f;          /* Texto principal */
+            --text-muted: #6e594d;         /* Texto secundário */
+            --border-color: #dfd0be;       /* Cor das bordas */
             
             /* Efeitos globais */
-            --shadow-sm: 0 2px 8px rgba(27,58,36,0.07);
-            --shadow-md: 0 8px 28px rgba(27,58,36,0.10);
-            --shadow-lg: 0 20px 50px rgba(27,58,36,0.14);
+            --shadow-sm: 0 2px 8px rgba(74, 39, 17, 0.07);
+            --shadow-md: 0 8px 28px rgba(74, 39, 17, 0.10);
+            --shadow-lg: 0 20px 50px rgba(74, 39, 17, 0.14);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --radius-md: 18px;
         }
@@ -600,7 +600,7 @@
     <div class="progress-banner">
         <div class="progress-banner-inner">
             <div class="progress-greeting">
-                <h1><span data-config="greetingText">Olá</span>, <span id="user-firstname">Agricultor</span>! 👋</h1>
+                <h1><span data-config="greetingText">Olá</span>, <span id="user-firstname">Produtor</span>! 👋</h1>
                 <p data-config="progressSubtext">Seus materiais estão disponíveis abaixo.</p>
             </div>
             <div class="progress-widget">
@@ -631,6 +631,7 @@
 
     <div class="page-footer" data-config="footerText">
         &copy; 2025 Hortaliças Ilustradas · Todos os direitos reservados
+        &copy; 2026 Ganho de Peso Bovino · Todos os direitos reservados
     </div>
 
     <!-- 
@@ -641,20 +642,20 @@
     -->
     <script>
         const PAGE_CONFIG = {
-            metaTitle: "Área de Membros – Hortaliças Ilustradas",
-            topbarBrand: "Hortaliças Ilustradas",
+            metaTitle: "Área de Membros – Ganho de Peso Bovino",
+            topbarBrand: "Ganho de Peso Bovino",
             logoutBtnText: "Sair",
             greetingText: "Olá",
             progressSubtext: "Seus materiais estão disponíveis abaixo.",
             progressLabel: "Seu Progresso",
             sectionTitle: "Seus Conteúdos Disponíveis",
-            footerText: "&copy; 2025 Hortaliças Ilustradas · Todos os direitos reservados",
+            footerText: "&copy; 2026 Ganho de Peso Bovino · Todos os direitos reservados",
             
             // Textos de progresso e mensagens
             progressMsgDefault: "Clique no ✓ de cada card para registrar seu progresso!",
             progressMessages: [
                 'Clique no ✓ de cada card para registrar seu progresso!',
-                'Ótimo começo! Continue avançando 🌱',
+                'Ótimo começo! Continue avançando 🐂',
                 'Você está no caminho certo! 💪',
                 'Mais da metade concluída! Incrível 🚀',
                 'Quase lá! Falta pouco! ⭐',
@@ -662,7 +663,7 @@
             ],
 
             // Paleta de cores do confetti de progresso
-            confettiColors: ['#4caf50', '#1b3a24', '#c8e6c9', '#ffffff'],
+            confettiColors: ['#e67e22', '#4a2711', '#fdf2e9', '#ffffff'],
 
             // Mensagens de Restrição de Planos
             lockMsgCompletePlan: "Disponível no Plano Completo",
@@ -676,17 +677,17 @@
                     id: 0,
                     type: 'principal',
                     badge: 'MATERIAL PRINCIPAL',
-                    title: '+150 Pragas e Doenças em Hortaliças Ilustradas',
-                    desc: 'Guia ilustrado definitivo para identificação rápida dos principais sintomas e sinais de doenças na sua horta.',
-                    img: 'https://i.ibb.co/v6ngRRkk/image.png',
+                    title: '+150 Técnicas para Ganho de Peso Bovino Ilustradas',
+                    desc: 'Guia ilustrado definitivo para aplicar práticas de manejo, nutrição e suplementação para engorda rápida do rebanho.',
+                    img: 'https://i.ibb.co/fVPzQm16/image.png',
                     link: 'https://drive.google.com/file/d/1i7DoWrIAfBxfo9amA30odDb6PuIb6c45/view'
                 },
                 {
                     id: 1,
                     type: 'bonus',
                     badge: 'BÔNUS 1',
-                    title: 'Mapa Visual de Sintomas nas Folhas',
-                    desc: 'Identificação visual expressa de manchas, furos e anomalias comuns em folhas de hortaliças.',
+                    title: 'Atlas Visual de Pastagens e Forrageiras',
+                    desc: 'Principais espécies ilustradas, características visuais, adaptação e indicação de uso prático.',
                     img: 'https://i.ibb.co/HTVgvSr8/image.png',
                     link: 'https://drive.google.com/file/d/1PbOCUu6n2_TINYALAyMjJlWFE6LG9LPo/view'
                 },
@@ -694,8 +695,8 @@
                     id: 2,
                     type: 'bonus',
                     badge: 'BÔNUS 2',
-                    title: 'Calendário de Alerta Horta Saudável',
-                    desc: 'Organização sazonal e cronograma de cuidados preventivos contra pragas ao longo do ano.',
+                    title: 'Guia Ilustrado de Suplementação Mineral Bovina',
+                    desc: 'Tipos de suplementos, minerais essenciais e estratégias organizadas por finalidade e fases do rebanho.',
                     img: 'https://i.ibb.co/Mxzng0Vr/image.png',
                     link: 'https://drive.google.com/file/d/1glAsl1cTku-PoMnzGnIg5-Uf4tB5UdnC/view'
                 },
@@ -703,8 +704,8 @@
                     id: 3,
                     type: 'bonus',
                     badge: 'BÔNUS 3',
-                    title: 'Ficha de Diagnóstico Visual',
-                    desc: 'Pranchetas e formulários para anotações de campo e monitoramento de culturas no dia a dia.',
+                    title: 'Manual Visual de Escore Corporal Bovino',
+                    desc: 'Escalas ilustradas, comparações visuais de condição física e características de cada estágio de desenvolvimento.',
                     img: 'https://i.ibb.co/9mPSJGvN/image.png',
                     link: 'https://drive.google.com/file/d/1wN8wRU1rcMZ0VRQR5xMY9GxLJgyaYpUA/view'
                 },
@@ -712,8 +713,8 @@
                     id: 4,
                     type: 'bonus',
                     badge: 'BÔNUS 4',
-                    title: 'Miniatlas dos Insetos Comuns',
-                    desc: 'Guia de bolso para reconhecimento rápido de ácaros, lagartas e pulgões nas suas plantas.',
+                    title: 'Atlas de Sanidade Animal e Vacinação',
+                    desc: 'Identificação visual das principais vacinas, controle de parasitas e calendário profilático bovino.',
                     img: 'https://i.ibb.co/pvY6DCvZ/image.png',
                     link: 'https://drive.google.com/file/d/14MXLfxz3n-Rm-wyz0HxMwKocHG1d_XqP/view'
                 },
@@ -721,8 +722,8 @@
                     id: 5,
                     type: 'orderbump',
                     badge: 'OFERTA ESPECIAL',
-                    title: '100 Defensivos e Produtos para Hortaliças Ilustrados',
-                    desc: 'Guia completo de defensivos, produtos e dosagens recomendadas para manter sua horta protegida.',
+                    title: '100 Práticas de Manejo e Instalações Zootécnicas',
+                    desc: 'Desenhos e esquemas ilustrados de currais, cochos e bebedouros para otimizar o ganho de peso.',
                     img: 'https://i.ibb.co/Qv274w4k/image.png',
                     link: 'https://drive.google.com/file/d/1FghLaRiFc9d66sly7wt7UuH2s_lkOewF/view'
                 }
@@ -745,7 +746,7 @@
 
         // Persistir sessão do usuário localmente
         localStorage.setItem('member_email', userEmail);
-        localStorage.setItem('member_name', userName || 'Agricultor');
+        localStorage.setItem('member_name', userName || 'Produtor');
         localStorage.setItem('member_plano', userPlan);
 
         // Limpar parâmetros da URL para ficar limpo (/dashboard.html)
@@ -763,7 +764,7 @@
         });
 
         // Nome do Usuário
-        const displayName = userName || 'Agricultor';
+        const displayName = userName || 'Produtor';
         const firstNameRaw = displayName.split(' ')[0];
         const firstName = firstNameRaw.charAt(0).toUpperCase() + firstNameRaw.slice(1).toLowerCase();
 

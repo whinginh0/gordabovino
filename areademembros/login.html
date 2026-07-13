@@ -16,13 +16,13 @@
         ==================================================================
         */
         :root {
-            --primary: #1b3a24;            /* Verde Escuro principal */
-            --primary-light: #2d5a3c;      /* Verde Médio */
-            --support: #4caf50;            /* Verde Suporte */
-            --support-light: #e8f5e9;      /* Verde Claro */
-            --bg-beige: #e4f2e4;           /* Fundo do card de login */
-            --text-dark: #2c3e2e;          /* Texto principal */
-            --border-color: #b8e2b9;       /* Cor das bordas */
+            --primary: #4a2711;            /* Marrom Escuro Quente */
+            --primary-light: #7c3f1b;      /* Marrom Médio */
+            --support: #e67e22;            /* Laranja */
+            --support-light: #fdf2e9;      /* Laranja/Creme Bem Claro */
+            --bg-beige: #f5ebd9;           /* Fundo do card de login (Bege) */
+            --text-dark: #2b1a0f;          /* Texto principal */
+            --border-color: #dfd0be;       /* Cor das bordas */
         }
 
         * {
@@ -44,7 +44,7 @@
         .login-container {
             background-color: var(--bg-beige);
             /* Leaf wallpaper pattern with SVG inline leaves */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%232d5a3c' fill-opacity='0.04'%3E%3Cpath d='M10 20c5 0 8 4 8 10s-3 10-8 10-8-4-8-10 3-10 8-10zm0 2c-3.3 0-6 2.7-6 8s2.7 8 6 8 6-2.7 6-8-2.7-8-6-8zm40 40c5 0 8 4 8 10s-3 10-8 10-8-4-8-10 3-10 8-10zm0 2c-3.3 0-6 2.7-6 8s2.7 8 6 8 6-2.7 6-8-2.7-8-6-8zM30 45c3.8 0 6 3 6 7s-2.2 7-6 7-6-3-6-7 2.2-7 6-7zm0 1.5c-2.5 0-4.5 2-4.5 5.5s2 5.5 4.5 5.5 4.5-2 4.5-5.5-2-4.5-4.5-4.5zm40-30c3.8 0 6 3 6 7s-2.2 7-6 7-6-3-6-7 2.2-7 6-7zm0 1.5c-2.5 0-4.5 2-4.5 5.5s2 5.5 4.5 5.5 4.5-2 4.5-5.5-2-4.5-4.5-4.5z'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%237c3f1b' fill-opacity='0.04'%3E%3Cpath d='M10 20c5 0 8 4 8 10s-3 10-8 10-8-4-8-10 3-10 8-10zm0 2c-3.3 0-6 2.7-6 8s2.7 8 6 8 6-2.7 6-8-2.7-8-6-8zm40 40c5 0 8 4 8 10s-3 10-8 10-8-4-8-10 3-10 8-10zm0 2c-3.3 0-6 2.7-6 8s2.7 8 6 8 6-2.7 6-8-2.7-8-6-8zM30 45c3.8 0 6 3 6 7s-2.2 7-6 7-6-3-6-7 2.2-7 6-7zm0 1.5c-2.5 0-4.5 2-4.5 5.5s2 5.5 4.5 5.5 4.5-2 4.5-5.5-2-4.5-4.5-4.5zm40-30c3.8 0 6 3 6 7s-2.2 7-6 7-6-3-6-7 2.2-7 6-7zm0 1.5c-2.5 0-4.5 2-4.5 5.5s2 5.5 4.5 5.5 4.5-2 4.5-5.5-2-4.5-4.5-4.5z'/%3E%3C/g%3E%3C/svg%3E");
             max-width: 420px;
             width: 100%;
             border-radius: 24px;
@@ -123,7 +123,7 @@
         .input-group input:focus {
             border-color: var(--support);
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
+            box-shadow: 0 0 10px rgba(230, 126, 34, 0.15);
         }
 
         .error-message {
@@ -144,14 +144,14 @@
             font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.3);
             transition: all 0.3s ease;
             margin-bottom: 20px;
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
         }
 
         .footer-note {
