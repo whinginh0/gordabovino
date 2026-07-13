@@ -148,7 +148,7 @@ serve(async (req) => {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        sender: { name: "Ganho de Peso Bovino", email: "contato@pesobovino.hyzencompra.shop" },
+        sender: { name: "Ganho de Peso Bovino", email: "pesobovino@hyzencompra.shop" },
         to: [{ email: customerEmail, name: customerName }],
         subject: "Seu acesso ao Ganho de Peso Bovino foi liberado! 🐂",
         htmlContent: emailHtml
