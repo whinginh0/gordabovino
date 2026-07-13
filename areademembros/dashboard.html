@@ -813,8 +813,7 @@
         function toggleTrack(id) {
             const item = PAGE_CONFIG.materials.find(m => m.id === id);
             if (item) {
-                if (item.type === 'bonus' && userPlan === 'basico') return;
-                if (item.type === 'orderbump' && !userPlan.includes('orderbump')) return;
+                if (item.id !== 0) return;
             }
 
             const index = completedIds.indexOf(id);
@@ -845,12 +844,9 @@
                 let isLocked = false;
                 let lockMessage = PAGE_CONFIG.lockMsgCompletePlan;
 
-                if (item.type === 'bonus' && userPlan === 'basico') {
+                if (item.id !== 0) {
                     isLocked = true;
-                    lockMessage = PAGE_CONFIG.lockMsgCompletePlan;
-                } else if (item.type === 'orderbump' && !userPlan.includes('orderbump')) {
-                    isLocked = true;
-                    lockMessage = PAGE_CONFIG.lockMsgEspecialPlan;
+                    lockMessage = "Libera terça-feira (14/07)";
                 }
 
                 const card = document.createElement('div');
