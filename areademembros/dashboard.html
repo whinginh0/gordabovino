@@ -690,7 +690,7 @@
                     title: 'Atlas Visual de Pastagens e Forrageiras',
                     desc: 'Principais espécies ilustradas, características visuais, adaptação e indicação de uso prático.',
                     img: 'https://i.ibb.co/20JtTr5k/image.png',
-                    link: 'https://drive.google.com/file/d/1PbOCUu6n2_TINYALAyMjJlWFE6LG9LPo/view'
+                    link: 'https://drive.google.com/file/d/1VMirHVexZjE8nLbQC82czXKmL-za7gh7/view'
                 },
                 {
                     id: 2,
@@ -796,7 +796,7 @@
         function toggleTrack(id) {
             const item = PAGE_CONFIG.materials.find(m => m.id === id);
             if (item) {
-                if (item.id !== 0) return;
+                if (item.id > 1) return;
             }
 
             const index = completedIds.indexOf(id);
@@ -827,7 +827,7 @@
                 let isLocked = false;
                 let lockMessage = PAGE_CONFIG.lockMsgCompletePlan;
 
-                if (item.id !== 0) {
+                if (item.id > 1) {
                     isLocked = true;
                     lockMessage = "Libera terça-feira (14/07)";
                 }
