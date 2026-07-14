@@ -699,7 +699,7 @@
                     title: 'Guia Ilustrado de Suplementação Mineral Bovina',
                     desc: 'Tipos de suplementos, minerais essenciais e estratégias organizadas por finalidade e fases do rebanho.',
                     img: 'https://i.ibb.co/WNf5mK5T/image.png',
-                    link: 'https://drive.google.com/file/d/1glAsl1cTku-PoMnzGnIg5-Uf4tB5UdnC/view'
+                    link: 'https://drive.google.com/file/d/1oKpXRA4GS2499AeNneJewUzbT27FZACu/view'
                 },
                 {
                     id: 3,
@@ -796,7 +796,7 @@
         function toggleTrack(id) {
             const item = PAGE_CONFIG.materials.find(m => m.id === id);
             if (item) {
-                if (item.id > 1) return;
+                if (item.id > 2) return;
             }
 
             const index = completedIds.indexOf(id);
@@ -827,7 +827,7 @@
                 let isLocked = false;
                 let lockMessage = PAGE_CONFIG.lockMsgCompletePlan;
 
-                if (item.id > 1) {
+                if (item.id > 2) {
                     isLocked = true;
                     lockMessage = "Libera terça-feira (14/07)";
                 }
