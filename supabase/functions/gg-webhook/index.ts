@@ -124,6 +124,19 @@ serve(async (req) => {
 
     if (dbError) throw dbError;
 
+    // Fetch Brevo API key from the database configuration table
+    let brevoKey = Deno.env.get('BREVO_API_KEY');
+    if (!brevoKey) {
+      const { data: configData } = await supabaseClient
+        .from('configuracoes')
+        .select('valor')
+        .eq('chave', 'BREVO_API_KEY')
+        .single();
+      if (configData) {
+        brevoKey = configData.valor;
+      }
+    }
+
     // 4. Montar o HTML do e-mail
     let emailHtml = EMAIL_TEMPLATE
       .replaceAll('{{params.NOME}}', customerName)
@@ -144,7 +157,7 @@ serve(async (req) => {
     const brevoResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
-        'api-key': BREVO_API_KEY,
+        'api-key': brevoKey || '',
         'content-type': 'application/json'
       },
       body: JSON.stringify({
