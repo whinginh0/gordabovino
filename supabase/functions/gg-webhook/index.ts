@@ -103,13 +103,28 @@ serve(async (req) => {
 
     // 2. Detectar se comprou Order Bump na lista de produtos
     const products = payload.products || [];
-    const orderBumpItem = products.find((p: any) => p.type === 'orderbump');
-    
-    const comprouOrderbump = !!orderBumpItem;
-    const nomeOrderbump = orderBumpItem ? orderBumpItem.title : '';
+    const comprouSuplementacao = products.some((p: any) => p.type === 'orderbump' && p.title.toLowerCase().includes('suplementa'));
+    const comprouMedicamentos = products.some((p: any) => p.type === 'orderbump' && p.title.toLowerCase().includes('medicamento'));
+
+    const activeBumps = [];
+    const activeBumpNames = [];
+    if (comprouSuplementacao) {
+      activeBumps.push('suplementacao');
+      activeBumpNames.push("Kit Completo de Suplementação Mineral Bovina");
+    }
+    if (comprouMedicamentos) {
+      activeBumps.push('medicamentos');
+      activeBumpNames.push("250 Medicamentos Veterinários Ilustrados");
+    }
+
+    const comprouOrderbump = activeBumps.length > 0;
+    const nomeOrderbump = activeBumpNames.join(" e ");
     
     // Definir plano final no banco de dados
-    const planoFinal = comprouOrderbump ? 'completo_orderbump' : 'completo';
+    let planoFinal = 'completo';
+    if (activeBumps.length > 0) {
+      planoFinal = 'completo_' + activeBumps.join('_');
+    }
 
     // 3. Upsert no Supabase
     const supabaseClient = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -128,7 +143,7 @@ serve(async (req) => {
     let emailHtml = EMAIL_TEMPLATE
       .replaceAll('{{params.NOME}}', customerName)
       .replaceAll('{{params.EMAIL}}', customerEmail)
-      .replaceAll('{{params.PLANO}}', comprouOrderbump ? "Plano Completo + Bônus" : "Plano Completo")
+      .replaceAll('{{params.PLANO}}', comprouOrderbump ? "Plano Completo + Adicional(is)" : "Plano Completo")
       .replaceAll('{{params.LINK_MEMBROS}}', 'https://www.pesobovino.hyzencompra.shop/areademembros');
 
     if (comprouOrderbump) {

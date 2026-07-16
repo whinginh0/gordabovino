@@ -718,6 +718,15 @@
                     desc: 'Guia definitivo e prático para formular, misturar e aplicar suplementos minerais de alta performance.',
                     img: 'https://i.ibb.co/RpfKMgR7/image.png',
                     link: 'https://drive.google.com/file/d/1hpl5nMKLhLwU-1LhMoajqhfeIChiG3_X/view'
+                },
+                {
+                    id: 5,
+                    type: 'orderbump',
+                    badge: 'OFERTA ESPECIAL',
+                    title: '250 Medicamentos Veterinários Ilustrados',
+                    desc: 'Manual completo ilustrado com dosagens, indicações e aplicações práticas de medicamentos de uso veterinário.',
+                    img: 'https://i.ibb.co/r2RX7mn2/image.png',
+                    link: 'https://drive.google.com/file/d/1zom2CfyfiS8eIjgA23tKNYBkmWpHr7mD/view'
                 }
             ]
         };
@@ -771,15 +780,16 @@
             localStorage.removeItem('member_plano');
             window.location.href = 'login.html';
         }
-
-        // ── Rastreamento de progresso de leitura ──
         const storageKey = `progress_${userEmail}`;
         let completedIds = JSON.parse(localStorage.getItem(storageKey)) || [];
 
         function updateProgress() {
             const availableMaterials = PAGE_CONFIG.materials.filter(item => {
                 if (item.type === 'bonus' && userPlan === 'basico') return false;
-                if (item.type === 'orderbump' && !userPlan.includes('orderbump')) return false;
+                if (item.type === 'orderbump') {
+                    if (item.id === 4 && !(userPlan.includes('orderbump') || userPlan.includes('suplementacao'))) return false;
+                    if (item.id === 5 && !userPlan.includes('medicamentos')) return false;
+                }
                 return true;
             });
 
@@ -832,7 +842,10 @@
             container.innerHTML = '';
             PAGE_CONFIG.materials.forEach(item => {
                 if (item.type === 'bonus' && userPlan === 'basico') return;
-                if (item.type === 'orderbump' && !userPlan.includes('orderbump')) return;
+                if (item.type === 'orderbump') {
+                    if (item.id === 4 && !(userPlan.includes('orderbump') || userPlan.includes('suplementacao'))) return;
+                    if (item.id === 5 && !userPlan.includes('medicamentos')) return;
+                }
 
                 const isCompleted = completedIds.includes(item.id);
                 let isLocked = false;
